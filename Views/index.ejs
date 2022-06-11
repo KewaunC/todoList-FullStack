@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="#">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <script src="https://kit.fontawesome.com/66544abedc.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <header>
+    <h1>To Do List</h1>
+  </header>
+
+  <form action="/listItems" method="POST">
+    <input type="text" class="todoInput" name="item"><!--line 18 is gonna have a string of what our todo list is and it also holds the name of "item" value-->
+    <button class="todoButton" type="submit">
+      <i class="fa-solid fa-plus"></i>
+    </button>   
+  </form>
+
+  <section class="todoContainer">    
+    <ul class="todoList">      
+        <% for(let i=0; i<listItems.length; i++) {%>
+          <li class="message">
+            <span><%= listItems[i].item %></span> <!--this is a templete that data can spit out -->       
+          </li>
+        <% } %>       
+    </ul>    
+ </section>  
+
+  <span class="total"></span>
+
+  <section>
+    <button class="clearCompleted"> Clear Completed</button>
+   <br> 
+    <button class="clearList"> Clear List</button>
+  </section>
+
+  <!-- <script src = "main.js" ></script> -->
+</body>
+</html>
